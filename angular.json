@@ -65,9 +65,7 @@
               }
             ],
             "styles": [
-              "projects/guane-ui/src/lib/styles/guane-variables.scss",
-              "projects/guane-ui/src/lib/core/theme/light-theme.scss",
-              "projects/guane-ui/src/lib/core/theme/dark-theme.scss",
+              "projects/guane-ui/src/lib/styles/main.scss",
               "projects/showcase/src/styles.scss"
             ],
             "scripts": [],

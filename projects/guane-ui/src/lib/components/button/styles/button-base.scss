@@ -1,12 +1,14 @@
+// projects/guane-ui/src/lib/components/button/styles/button-base.scss
+@use '../../../styles/guane-variables.scss' as variables;
 @use 'sass:map';
 
 $button-base-config: (
-  font-family: var(--guane-font-family),
-  border-radius: var(--guane-border-radius-md),
+  font-family: variables.$guane-font-family,
+  border-radius: variables.$guane-border-radius-md,
   transition: all 0.2s ease,
   font-weight: 500,
   text-transform: none,
-  box-shadow: var(--guane-shadow-sm)
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05)
 );
 
 .guane-button {
@@ -14,11 +16,13 @@ $button-base-config: (
   align-items: center;
   justify-content: center;
 
-  font-family: map-get($button-base-config, font-family);
-  border-radius: map-get($button-base-config, border-radius);
-  transition: map-get($button-base-config, transition);
-  font-weight: map-get($button-base-config, font-weight);
-  text-transform: map-get($button-base-config, text-transform);
+  // Usar map.get en lugar de la notación con punto
+  font-family: map.get($button-base-config, 'font-family');
+  border-radius: map.get($button-base-config, 'border-radius');
+  transition: map.get($button-base-config, 'transition');
+  font-weight: map.get($button-base-config, 'font-weight');
+  text-transform: map.get($button-base-config, 'text-transform');
+  box-shadow: map.get($button-base-config, 'box-shadow');
 
   cursor: pointer;
   outline: none;
@@ -27,7 +31,7 @@ $button-base-config: (
   text-decoration: none;
 
   &:focus-visible {
-    outline: 2px solid var(--guane-primary-light);
+    outline: 2px solid variables.$guane-primary;
     outline-offset: 2px;
   }
 }

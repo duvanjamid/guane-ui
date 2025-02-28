@@ -1,32 +1,58 @@
+// projects/guane-ui/src/lib/components/button/styles/button-variants.scss
+@use 'sass:color';
 @use 'sass:map';
+@use '../../../styles/guane-variables.scss' as variables;
 
 $button-variants: (
   primary: (
-    background: var(--guane-primary),
+    background: variables.$guane-primary,
     color: white,
-    hover-background: var(--guane-primary-dark),
-    active-background: var(--guane-primary-darker)
+    hover-background: color.adjust(variables.$guane-primary, $lightness: -10%),
+    active-background: color.adjust(variables.$guane-primary, $lightness: -15%)
   ),
   secondary: (
-    background: var(--guane-secondary),
+    background: variables.$guane-secondary,
     color: white,
-    hover-background: var(--guane-secondary-dark),
-    active-background: var(--guane-secondary-darker)
+    hover-background: color.adjust(variables.$guane-secondary, $lightness: -10%),
+    active-background: color.adjust(variables.$guane-secondary, $lightness: -15%)
   ),
-  // Añadir más variantes
+  success: (
+    background: variables.$guane-success,
+    color: white,
+    hover-background: color.adjust(variables.$guane-success, $lightness: -10%),
+    active-background: color.adjust(variables.$guane-success, $lightness: -15%)
+  ),
+  warning: (
+    background: variables.$guane-warning,
+    color: white,
+    hover-background: color.adjust(variables.$guane-warning, $lightness: -10%),
+    active-background: color.adjust(variables.$guane-warning, $lightness: -15%)
+  ),
+  error: (
+    background: variables.$guane-error,
+    color: white,
+    hover-background: color.adjust(variables.$guane-error, $lightness: -10%),
+    active-background: color.adjust(variables.$guane-error, $lightness: -15%)
+  ),
+  info: (
+    background: variables.$guane-info,
+    color: white,
+    hover-background: color.adjust(variables.$guane-info, $lightness: -10%),
+    active-background: color.adjust(variables.$guane-info, $lightness: -15%)
+  )
 );
 
 @each $variant, $colors in $button-variants {
   .guane-button-#{$variant} {
-    background-color: map-get($colors, background);
-    color: map-get($colors, color);
+    background-color: map.get($colors, 'background');
+    color: map.get($colors, 'color');
 
     &:hover {
-      background-color: map-get($colors, hover-background);
+      background-color: map.get($colors, 'hover-background');
     }
 
     &:active {
-      background-color: map-get($colors, active-background);
+      background-color: map.get($colors, 'active-background');
     }
   }
 }
