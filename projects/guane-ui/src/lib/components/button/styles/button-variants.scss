@@ -1,0 +1,32 @@
+@use 'sass:map';
+
+$button-variants: (
+  primary: (
+    background: var(--guane-primary),
+    color: white,
+    hover-background: var(--guane-primary-dark),
+    active-background: var(--guane-primary-darker)
+  ),
+  secondary: (
+    background: var(--guane-secondary),
+    color: white,
+    hover-background: var(--guane-secondary-dark),
+    active-background: var(--guane-secondary-darker)
+  ),
+  // Añadir más variantes
+);
+
+@each $variant, $colors in $button-variants {
+  .guane-button-#{$variant} {
+    background-color: map-get($colors, background);
+    color: map-get($colors, color);
+
+    &:hover {
+      background-color: map-get($colors, hover-background);
+    }
+
+    &:active {
+      background-color: map-get($colors, active-background);
+    }
+  }
+}

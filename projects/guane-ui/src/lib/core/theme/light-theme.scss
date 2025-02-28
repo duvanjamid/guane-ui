@@ -1,0 +1,11 @@
+@use '../../styles/guane-variables.scss' as variables;
+
+.guane-light-theme {
+  color-scheme: light;
+  background-color: variables.$guane-background-light;
+  color: variables.$guane-text-primary;
+
+  // Colores específicos para tema claro
+  --guane-background-primary: #FFFFFF;
+  --guane-background-secondary: #F9FAFB;
+}

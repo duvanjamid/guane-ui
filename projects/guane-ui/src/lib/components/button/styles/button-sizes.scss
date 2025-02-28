@@ -1,0 +1,25 @@
+$button-sizes: (
+  small: (
+    padding: 8px 16px,
+    font-size: 12px,
+    height: 32px
+  ),
+  medium: (
+    padding: 12px 24px,
+    font-size: 14px,
+    height: 40px
+  ),
+  large: (
+    padding: 16px 32px,
+    font-size: 16px,
+    height: 48px
+  )
+);
+
+@each $size, $properties in $button-sizes {
+  .guane-button-#{$size} {
+    padding: map-get($properties, padding);
+    font-size: map-get($properties, font-size);
+    height: map-get($properties, height);
+  }
+}

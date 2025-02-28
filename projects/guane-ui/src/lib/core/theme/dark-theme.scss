@@ -1,0 +1,11 @@
+@use '../../styles/guane-variables.scss' as variables;
+
+.guane-dark-theme {
+  color-scheme: dark;
+  background-color: variables.$guane-background-dark;
+  color: #F9FAFB;
+
+  // Colores específicos para tema oscuro
+  --guane-background-primary: #1F2937;
+  --guane-background-secondary: #374151;
+}

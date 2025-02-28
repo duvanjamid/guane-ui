@@ -1,0 +1,33 @@
+@use 'sass:map';
+
+$button-base-config: (
+  font-family: var(--guane-font-family),
+  border-radius: var(--guane-border-radius-md),
+  transition: all 0.2s ease,
+  font-weight: 500,
+  text-transform: none,
+  box-shadow: var(--guane-shadow-sm)
+);
+
+.guane-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: map-get($button-base-config, font-family);
+  border-radius: map-get($button-base-config, border-radius);
+  transition: map-get($button-base-config, transition);
+  font-weight: map-get($button-base-config, font-weight);
+  text-transform: map-get($button-base-config, text-transform);
+
+  cursor: pointer;
+  outline: none;
+  border: none;
+  user-select: none;
+  text-decoration: none;
+
+  &:focus-visible {
+    outline: 2px solid var(--guane-primary-light);
+    outline-offset: 2px;
+  }
+}
